@@ -1,0 +1,1121 @@
+Program.Sub.ScreenSU.Start
+gui.F_Main..create
+gui.F_Main..caption("Workflow View")
+gui.F_Main..size(15210,8370)
+gui.F_Main..position(0,0)
+gui.F_Main..event(unload,f_main_unload)
+gui.F_Main..alwaysontop(False)
+gui.F_Main..fontname("Arial")
+gui.F_Main..fontsize(8)
+gui.F_Main..forecolor(0)
+gui.F_Main..fontstyle(,,,,)
+gui.F_Main..BackColor(-2147483633)
+gui.F_Main..controlbox(True)
+gui.F_Main..maxbutton(False)
+gui.F_Main..minbutton(True)
+gui.F_Main..mousepointer(0)
+gui.F_Main..moveable(True)
+gui.F_Main..sizeable(False)
+gui.F_Main..ShowInTaskBar(True)
+gui.F_Main..titlebar(True)
+gui.F_Main.frmHeader.create(frame)
+gui.F_Main.frmHeader.caption("")
+gui.F_Main.frmHeader.size(14880,1245)
+gui.F_Main.frmHeader.position(-90,100)
+gui.F_Main.frmHeader.visible(True)
+gui.F_Main.frmHeader.borderstyle(0)
+gui.F_Main.frmHeader.fontname("Arial")
+gui.F_Main.frmHeader.fontsize(8)
+gui.F_Main.frmLines.create(frame)
+gui.F_Main.frmLines.caption("")
+gui.F_Main.frmLines.size(14835,6615)
+gui.F_Main.frmLines.position(75,1385)
+gui.F_Main.frmLines.visible(True)
+gui.F_Main.frmLines.borderstyle(0)
+gui.F_Main.frmLines.fontname("Arial")
+gui.F_Main.frmLines.fontsize(8)
+gui.F_Main.txtID.create(textbox,"",True,1215,315,0,190,315,True,0,Arial,8,-2147483643,1)
+gui.F_Main.txtID.parent("frmheader")
+gui.F_Main.txtID.numericonly(1)
+gui.F_Main.lbl1.create(label,"Priority",True,510,255,1,10080,120,True,0,Arial,8,-2147483633,0)
+gui.F_Main.lbl1.parent("frmheader")
+gui.F_Main.cmdBrowse.create(button)
+gui.F_Main.cmdBrowse.caption("^")
+gui.F_Main.cmdBrowse.visible(True)
+gui.F_Main.cmdBrowse.size(360,315)
+gui.F_Main.cmdBrowse.zorder(0)
+gui.F_Main.cmdBrowse.position(1500,315)
+gui.F_Main.cmdBrowse.enabled(True)
+gui.F_Main.cmdBrowse.parent("frmheader")
+gui.F_Main.cmdBrowse.fontname("Arial")
+gui.F_Main.cmdBrowse.fontsize(8)
+gui.F_Main.cmdBrowse.event(click,cmdbrowse_click)
+gui.F_Main.lbl2.create(label,"Title",True,1935,255,1,2000,135,True,0,Arial,8,-2147483633,0)
+gui.F_Main.lbl2.parent("frmheader")
+gui.F_Main.txtTitle.create(textbox,"",True,5985,300,0,2000,315,True,0,Arial,8,-2147483643,1)
+gui.F_Main.txtTitle.parent("frmheader")
+gui.F_Main.txtTitle.maxLength(50)
+gui.F_Main.txtPID.create(textbox,"0",True,1215,300,0,8200,315,True,0,Arial,8,-2147483643,1)
+gui.F_Main.txtPID.parent("frmheader")
+gui.F_Main.txtPID.numericonly(1)
+gui.F_Main.lbl3.create(label,"Parent ID",True,765,255,1,8205,105,True,0,Arial,8,-2147483633,0)
+gui.F_Main.lbl3.parent("frmheader")
+gui.F_Main.txtStatus.create(textbox,"0",True,525,300,0,9475,315,True,0,Arial,8,-2147483643,1)
+gui.F_Main.txtStatus.parent("frmheader")
+gui.F_Main.txtStatus.numericonly(1)
+gui.F_Main.lbl4.create(label,"Status",True,585,255,1,9475,120,True,0,Arial,8,-2147483633,0)
+gui.F_Main.lbl4.parent("frmheader")
+gui.F_Main.fgLines.create(gsflexgrid)
+gui.F_Main.fgLines.FixedRows(0)
+gui.F_Main.fgLines.FixedCols(0)
+gui.F_Main.fgLines.visible(True)
+gui.F_Main.fgLines.size(14835,5730)
+gui.F_Main.fgLines.zorder(0)
+gui.F_Main.fgLines.position(0,0)
+gui.F_Main.fgLines.enabled(True)
+gui.F_Main.fgLines.parent("frmlines")
+gui.F_Main.fgLines.event(commandclick,fglines_commandclick)
+gui.F_Main.txtType.create(textbox,"0",True,435,300,0,10105,315,True,0,Arial,8,-2147483643,1)
+gui.F_Main.txtType.parent("frmheader")
+gui.F_Main.txtType.numericonly(1)
+gui.F_Main.lbl5.create(label,"ID",True,345,255,1,200,110,True,0,Arial,8,-2147483633,0)
+gui.F_Main.lbl5.parent("frmheader")
+gui.F_Main.cmdMeta.create(button)
+gui.F_Main.cmdMeta.caption("Meta")
+gui.F_Main.cmdMeta.visible(True)
+gui.F_Main.cmdMeta.size(855,375)
+gui.F_Main.cmdMeta.zorder(0)
+gui.F_Main.cmdMeta.position(215,700)
+gui.F_Main.cmdMeta.enabled(True)
+gui.F_Main.cmdMeta.parent("frmheader")
+gui.F_Main.cmdMeta.fontname("Arial")
+gui.F_Main.cmdMeta.fontsize(8)
+gui.F_Main.cmdMeta.event(click,cmdmeta_click)
+gui.F_Main.txtStart.create(textbox,"",True,915,300,0,10655,315,True,0,Arial,8,-2147483643,1)
+gui.F_Main.txtStart.parent("frmheader")
+gui.F_Main.lbl6.create(label,"Start Date",True,870,255,1,10655,120,True,0,Arial,8,-2147483633,0)
+gui.F_Main.lbl6.parent("frmheader")
+gui.F_Main.txtDueDate.create(textbox,"",True,930,300,0,11640,315,True,0,Arial,8,-2147483643,1)
+gui.F_Main.txtDueDate.parent("frmheader")
+gui.F_Main.lbl7.create(label,"Due Date",True,870,255,1,11650,120,True,0,Arial,8,-2147483633,0)
+gui.F_Main.lbl7.parent("frmheader")
+gui.F_Main.txtCompletionDate.create(textbox,"",True,975,300,0,13630,315,True,0,Arial,8,-2147483643,1)
+gui.F_Main.txtCompletionDate.parent("frmheader")
+gui.F_Main.lbl8.create(label,"Completion Date",True,1215,255,1,13595,120,True,0,Arial,8,-2147483633,0)
+gui.F_Main.lbl8.parent("frmheader")
+gui.F_Main.txtPercComplete.create(textbox,"",True,705,300,0,12715,315,True,0,Arial,8,-2147483643,1)
+gui.F_Main.txtPercComplete.parent("frmheader")
+gui.F_Main.lbl9.create(label,"% Completed",True,945,255,1,12540,120,True,0,Arial,8,-2147483633,0)
+gui.F_Main.lbl9.parent("frmheader")
+gui.F_Main.cmdLink.create(button)
+gui.F_Main.cmdLink.caption("Link")
+gui.F_Main.cmdLink.visible(True)
+gui.F_Main.cmdLink.size(855,375)
+gui.F_Main.cmdLink.zorder(0)
+gui.F_Main.cmdLink.position(1100,700)
+gui.F_Main.cmdLink.enabled(True)
+gui.F_Main.cmdLink.parent("frmheader")
+gui.F_Main.cmdLink.fontname("Arial")
+gui.F_Main.cmdLink.fontsize(8)
+gui.F_Main.cmdLink.event(click,cmdlink_click)
+gui.F_Main.cmdDelete.create(button)
+gui.F_Main.cmdDelete.caption("Delete")
+gui.F_Main.cmdDelete.visible(True)
+gui.F_Main.cmdDelete.size(855,375)
+gui.F_Main.cmdDelete.zorder(0)
+gui.F_Main.cmdDelete.position(2000,700)
+gui.F_Main.cmdDelete.enabled(True)
+gui.F_Main.cmdDelete.parent("frmheader")
+gui.F_Main.cmdDelete.fontname("Arial")
+gui.F_Main.cmdDelete.fontsize(8)
+gui.F_Main.cmdDelete.event(click,cmddelete_click)
+gui.F_Main.cmdBrowse.tabstop(True)
+gui.F_Main.cmdBrowse.tabindex(1)
+gui.F_Main.txtTitle.tabstop(True)
+gui.F_Main.txtTitle.tabindex(2)
+gui.F_Main.txtPID.tabstop(True)
+gui.F_Main.txtPID.tabindex(3)
+gui.F_Main.txtStatus.tabstop(True)
+gui.F_Main.txtStatus.tabindex(5)
+gui.F_Main.txtType.tabstop(True)
+gui.F_Main.txtType.tabindex(6)
+gui.F_Main.cmdMeta.tabstop(True)
+gui.F_Main.cmdMeta.tabindex(12)
+gui.F_Main.txtID.tabstop(True)
+gui.F_Main.txtID.tabindex(16)
+
+
+gui.F_LineExtra..create
+gui.F_LineExtra..caption("Template Line Extra")
+gui.F_LineExtra..size(8235,4665)
+gui.F_LineExtra..position(0,0)
+gui.F_LineExtra..event(unload,f_lineextra_unload)
+gui.F_LineExtra..alwaysontop(False)
+gui.F_LineExtra..fontname("Arial")
+gui.F_LineExtra..fontsize(8)
+gui.F_LineExtra..forecolor(0)
+gui.F_LineExtra..fontstyle(,,,,)
+gui.F_LineExtra..BackColor(-2147483633)
+gui.F_LineExtra..controlbox(True)
+gui.F_LineExtra..maxbutton(True)
+gui.F_LineExtra..minbutton(True)
+gui.F_LineExtra..mousepointer(0)
+gui.F_LineExtra..moveable(True)
+gui.F_LineExtra..sizeable(True)
+gui.F_LineExtra..ShowInTaskBar(True)
+gui.F_LineExtra..titlebar(True)
+gui.F_LineExtra.tabx1.create(tab)
+gui.F_LineExtra.tabx1.tabs(6)
+gui.F_LineExtra.tabx1.tabsperrow(7)
+gui.F_LineExtra.tabx1.settab(0)
+gui.F_LineExtra.tabx1.caption("User Fields")
+gui.F_LineExtra.tabx1.settab(1)
+gui.F_LineExtra.tabx1.caption("Notes")
+gui.F_LineExtra.tabx1.settab(2)
+gui.F_LineExtra.tabx1.caption("Dependencies")
+gui.F_LineExtra.tabx1.settab(3)
+gui.F_LineExtra.tabx1.caption("Document References")
+gui.F_LineExtra.tabx1.settab(4)
+gui.F_LineExtra.tabx1.caption("Meta Data")
+gui.F_LineExtra.tabx1.settab(5)
+gui.F_LineExtra.tabx1.caption("Reference")
+gui.F_LineExtra.tabx1.size(7575,3840)
+gui.F_LineExtra.tabx1.position(200,200)
+gui.F_LineExtra.tabx1.visible(True)
+gui.F_LineExtra.tabx1.fontname("Arial")
+gui.F_LineExtra.tabx1.fontsize(8)
+gui.F_LineExtra.frmUserFields.create(frame)
+gui.F_LineExtra.frmUserFields.caption("")
+gui.F_LineExtra.frmUserFields.parent("tabx1",0)
+gui.F_LineExtra.frmUserFields.size(7335,2745)
+gui.F_LineExtra.frmUserFields.position(0,0)
+gui.F_LineExtra.frmUserFields.visible(True)
+gui.F_LineExtra.frmUserFields.borderstyle(0)
+gui.F_LineExtra.frmUserFields.fontname("Arial")
+gui.F_LineExtra.frmUserFields.fontsize(8)
+gui.F_LineExtra.frmNotes.create(frame)
+gui.F_LineExtra.frmNotes.caption("Notes")
+gui.F_LineExtra.frmNotes.parent("tabx1",1)
+gui.F_LineExtra.frmNotes.size(7395,2985)
+gui.F_LineExtra.frmNotes.position(0,0)
+gui.F_LineExtra.frmNotes.visible(True)
+gui.F_LineExtra.frmNotes.borderstyle(0)
+gui.F_LineExtra.frmNotes.fontname("Arial")
+gui.F_LineExtra.frmNotes.fontsize(8)
+gui.F_LineExtra.frmDependency.create(frame)
+gui.F_LineExtra.frmDependency.caption("")
+gui.F_LineExtra.frmDependency.parent("tabx1",2)
+gui.F_LineExtra.frmDependency.size(7290,2850)
+gui.F_LineExtra.frmDependency.position(0,0)
+gui.F_LineExtra.frmDependency.visible(True)
+gui.F_LineExtra.frmDependency.borderstyle(0)
+gui.F_LineExtra.frmDependency.fontname("Arial")
+gui.F_LineExtra.frmDependency.fontsize(8)
+gui.F_LineExtra.frmMeta.create(frame)
+gui.F_LineExtra.frmMeta.caption("Frame")
+gui.F_LineExtra.frmMeta.parent("tabx1",4)
+gui.F_LineExtra.frmMeta.size(7305,2730)
+gui.F_LineExtra.frmMeta.position(0,0)
+gui.F_LineExtra.frmMeta.visible(True)
+gui.F_LineExtra.frmMeta.borderstyle(0)
+gui.F_LineExtra.frmMeta.fontname("Arial")
+gui.F_LineExtra.frmMeta.fontsize(8)
+gui.F_LineExtra.frame5.create(frame)
+gui.F_LineExtra.frame5.caption("Frame")
+gui.F_LineExtra.frame5.parent("tabx1",5)
+gui.F_LineExtra.frame5.size(7305,2730)
+gui.F_LineExtra.frame5.position(0,0)
+gui.F_LineExtra.frame5.visible(True)
+gui.F_LineExtra.frame5.borderstyle(0)
+gui.F_LineExtra.frame5.fontname("Arial")
+gui.F_LineExtra.frame5.fontsize(8)
+gui.F_LineExtra.txtU1.create(textbox,"",True,7080,300,0,10,250,True,0,Arial,8,-2147483643,1)
+gui.F_LineExtra.txtU1.parent("frmuserfields")
+gui.F_LineExtra.txtU1.maxLength(120)
+gui.F_LineExtra.txtU2.create(textbox,"",True,7080,300,0,10,795,True,0,Arial,8,-2147483643,1)
+gui.F_LineExtra.txtU2.parent("frmuserfields")
+gui.F_LineExtra.txtU2.maxLength(120)
+gui.F_LineExtra.txtU3.create(textbox,"",True,7065,300,0,10,1355,True,0,Arial,8,-2147483643,1)
+gui.F_LineExtra.txtU3.parent("frmuserfields")
+gui.F_LineExtra.txtU3.maxLength(120)
+gui.F_LineExtra.txtU4.create(textbox,"",True,7065,300,0,10,1855,True,0,Arial,8,-2147483643,1)
+gui.F_LineExtra.txtU4.parent("frmuserfields")
+gui.F_LineExtra.txtU4.maxLength(120)
+gui.F_LineExtra.txtU5.create(textbox,"",True,7065,300,0,10,2395,True,0,Arial,8,-2147483643,1)
+gui.F_LineExtra.txtU5.parent("frmuserfields")
+gui.F_LineExtra.txtU5.maxLength(120)
+gui.F_LineExtra.lbl1.create(label,"Notes",True,1935,255,1,95,95,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl1.parent("frmnotes")
+gui.F_LineExtra.txtNotes.create(textboxm)
+gui.F_LineExtra.txtNotes.text("")
+gui.F_LineExtra.txtNotes.visible(True)
+gui.F_LineExtra.txtNotes.size(7260,2475)
+gui.F_LineExtra.txtNotes.zorder(0)
+gui.F_LineExtra.txtNotes.position(110,305)
+gui.F_LineExtra.txtNotes.enabled(True)
+gui.F_LineExtra.txtNotes.alignment(0)
+gui.F_LineExtra.txtNotes.parent("frmnotes")
+gui.F_LineExtra.txtNotes.fontname("Arial")
+gui.F_LineExtra.txtNotes.fontsize(8)
+gui.F_LineExtra.txtNotes.BackColor(-2147483643)
+gui.F_LineExtra.fgDependecies.create(gsflexgrid)
+gui.F_LineExtra.fgDependecies.FixedRows(0)
+gui.F_LineExtra.fgDependecies.FixedCols(0)
+gui.F_LineExtra.fgDependecies.visible(True)
+gui.F_LineExtra.fgDependecies.size(7155,2550)
+gui.F_LineExtra.fgDependecies.zorder(0)
+gui.F_LineExtra.fgDependecies.position(75,160)
+gui.F_LineExtra.fgDependecies.enabled(True)
+gui.F_LineExtra.fgDependecies.parent("frmdependency")
+gui.F_LineExtra.lbl2.create(label,"Field 5",True,1935,255,1,10,2205,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl2.parent("frmuserfields")
+gui.F_LineExtra.lbl3.create(label,"Field 4",True,1935,255,1,10,1685,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl3.parent("frmuserfields")
+gui.F_LineExtra.lbl4.create(label,"Field 3",True,1935,255,1,10,1175,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl4.parent("frmuserfields")
+gui.F_LineExtra.lbl5.create(label,"Field 2",True,1935,255,1,10,620,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl5.parent("frmuserfields")
+gui.F_LineExtra.lbl6.create(label,"Field 1",True,1935,255,1,10,50,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl6.parent("frmuserfields")
+gui.F_LineExtra.fgDocuments.create(gsflexgrid)
+gui.F_LineExtra.fgDocuments.FixedRows(0)
+gui.F_LineExtra.fgDocuments.FixedCols(0)
+gui.F_LineExtra.fgDocuments.visible(True)
+gui.F_LineExtra.fgDocuments.size(7290,2730)
+gui.F_LineExtra.fgDocuments.zorder(0)
+gui.F_LineExtra.fgDocuments.position(50,40)
+gui.F_LineExtra.fgDocuments.enabled(True)
+gui.F_LineExtra.fgDocuments.parent("tabx1",3)
+gui.F_LineExtra.lbl7.create(label,"Meta 1",True,1935,255,1,20,15,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl7.parent("frmmeta")
+gui.F_LineExtra.txtMeta1.create(textbox,"",True,3090,300,0,35,200,True,0,Arial,8,-2147483643,1)
+gui.F_LineExtra.txtMeta1.parent("frmmeta")
+gui.F_LineExtra.txtMeta1.maxLength(120)
+gui.F_LineExtra.txtMeta2.create(textbox,"",True,3090,300,0,20,750,True,0,Arial,8,-2147483643,1)
+gui.F_LineExtra.txtMeta2.parent("frmmeta")
+gui.F_LineExtra.txtMeta2.maxLength(120)
+gui.F_LineExtra.txtMeta3.create(textbox,"",True,3090,300,0,20,1215,True,0,Arial,8,-2147483643,1)
+gui.F_LineExtra.txtMeta3.parent("frmmeta")
+gui.F_LineExtra.txtMeta3.maxLength(120)
+gui.F_LineExtra.txtMeta4.create(textbox,"",True,3090,300,0,20,1730,True,0,Arial,8,-2147483643,1)
+gui.F_LineExtra.txtMeta4.parent("frmmeta")
+gui.F_LineExtra.txtMeta4.maxLength(120)
+gui.F_LineExtra.txtMeta5.create(textbox,"",True,3090,300,0,20,2255,True,0,Arial,8,-2147483643,1)
+gui.F_LineExtra.txtMeta5.parent("frmmeta")
+gui.F_LineExtra.txtMeta5.maxLength(120)
+gui.F_LineExtra.txtMeta6.create(textbox,"",True,3090,300,0,3800,245,True,0,Arial,8,-2147483643,1)
+gui.F_LineExtra.txtMeta6.parent("frmmeta")
+gui.F_LineExtra.txtMeta6.maxLength(120)
+gui.F_LineExtra.txtMeta7.create(textbox,"",True,3090,300,0,3800,720,True,0,Arial,8,-2147483643,1)
+gui.F_LineExtra.txtMeta7.parent("frmmeta")
+gui.F_LineExtra.txtMeta7.maxLength(120)
+gui.F_LineExtra.txtMeta8.create(textbox,"",True,3090,300,0,3800,1220,True,0,Arial,8,-2147483643,1)
+gui.F_LineExtra.txtMeta8.parent("frmmeta")
+gui.F_LineExtra.txtMeta8.maxLength(120)
+gui.F_LineExtra.txtMeta9.create(textbox,"",True,3090,300,0,3800,1700,True,0,Arial,8,-2147483643,1)
+gui.F_LineExtra.txtMeta9.parent("frmmeta")
+gui.F_LineExtra.txtMeta9.maxLength(120)
+gui.F_LineExtra.txtMeta10.create(textbox,"",True,3090,300,0,3800,2225,True,0,Arial,8,-2147483643,1)
+gui.F_LineExtra.txtMeta10.parent("frmmeta")
+gui.F_LineExtra.txtMeta10.maxLength(120)
+gui.F_LineExtra.lbl8.create(label,"Meta 10",True,1935,255,1,3800,2000,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl8.parent("frmmeta")
+gui.F_LineExtra.lbl9.create(label,"Meta 9",True,1935,255,1,3800,1500,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl9.parent("frmmeta")
+gui.F_LineExtra.lbl10.create(label,"Meta 7",True,1935,255,1,3800,545,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl10.parent("frmmeta")
+gui.F_LineExtra.lbl11.create(label,"Meta 6",True,1935,255,1,3800,45,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl11.parent("frmmeta")
+gui.F_LineExtra.lbl12.create(label,"Meta 8",True,1935,255,1,3800,1000,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl12.parent("frmmeta")
+gui.F_LineExtra.lbl13.create(label,"Meta 5",True,1935,255,1,0,2045,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl13.parent("frmmeta")
+gui.F_LineExtra.lbl14.create(label,"Meta 4",True,1935,255,1,10,1515,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl14.parent("frmmeta")
+gui.F_LineExtra.lbl15.create(label,"Meta 3",True,1935,255,1,35,1025,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl15.parent("frmmeta")
+gui.F_LineExtra.lbl17.create(label,"Meta 2",True,1935,255,1,35,530,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl17.parent("frmmeta")
+gui.F_LineExtra.cmdDeleteDepend.create(button)
+gui.F_LineExtra.cmdDeleteDepend.caption("Delete")
+gui.F_LineExtra.cmdDeleteDepend.visible(True)
+gui.F_LineExtra.cmdDeleteDepend.size(855,375)
+gui.F_LineExtra.cmdDeleteDepend.zorder(0)
+gui.F_LineExtra.cmdDeleteDepend.position(-73150,2840)
+gui.F_LineExtra.cmdDeleteDepend.enabled(True)
+gui.F_LineExtra.cmdDeleteDepend.parent("tabx1",2)
+gui.F_LineExtra.cmdDeleteDepend.fontname("Arial")
+gui.F_LineExtra.cmdDeleteDepend.fontsize(8)
+gui.F_LineExtra.cmdDeleteDepend.event(click,cmddeletedepend_click)
+gui.F_LineExtra.txtActiveRow.create(textbox,"",False,450,300,0,7465,0,True,0,Arial,8,255,1)
+gui.F_LineExtra.lbl18.create(label,"Reference 1",True,1935,255,1,20,15,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl18.parent("frame5")
+gui.F_LineExtra.txtRef1.create(textbox,"",True,3090,300,0,20,200,True,0,Arial,8,-2147483643,1)
+gui.F_LineExtra.txtRef1.parent("frame5")
+gui.F_LineExtra.txtRef1.maxLength(50)
+gui.F_LineExtra.txtRef2.create(textbox,"",True,3090,300,0,20,750,True,0,Arial,8,-2147483643,1)
+gui.F_LineExtra.txtRef2.parent("frame5")
+gui.F_LineExtra.txtRef2.maxLength(50)
+gui.F_LineExtra.txtRef3.create(textbox,"",True,3090,300,0,20,1215,True,0,Arial,8,-2147483643,1)
+gui.F_LineExtra.txtRef3.parent("frame5")
+gui.F_LineExtra.txtRef3.maxLength(50)
+gui.F_LineExtra.txtRef4.create(textbox,"",True,3090,300,0,20,1730,True,0,Arial,8,-2147483643,1)
+gui.F_LineExtra.txtRef4.parent("frame5")
+gui.F_LineExtra.txtRef4.maxLength(50)
+gui.F_LineExtra.txtRef5.create(textbox,"",True,3090,300,0,20,2255,True,0,Arial,8,-2147483643,1)
+gui.F_LineExtra.txtRef5.parent("frame5")
+gui.F_LineExtra.txtRef5.maxLength(50)
+gui.F_LineExtra.txtRef6.create(textbox,"",True,3090,300,0,3800,245,True,0,Arial,8,-2147483643,1)
+gui.F_LineExtra.txtRef6.parent("frame5")
+gui.F_LineExtra.txtRef6.maxLength(50)
+gui.F_LineExtra.txtRef7.create(textbox,"",True,3090,300,0,3800,720,True,0,Arial,8,-2147483643,1)
+gui.F_LineExtra.txtRef7.parent("frame5")
+gui.F_LineExtra.txtRef7.maxLength(50)
+gui.F_LineExtra.txtRef8.create(textbox,"",True,3090,300,0,3800,1220,True,0,Arial,8,-2147483643,1)
+gui.F_LineExtra.txtRef8.parent("frame5")
+gui.F_LineExtra.txtRef8.maxLength(50)
+gui.F_LineExtra.txtRef9.create(textbox,"",True,3090,300,0,3800,1700,True,0,Arial,8,-2147483643,1)
+gui.F_LineExtra.txtRef9.parent("frame5")
+gui.F_LineExtra.txtRef9.maxLength(50)
+gui.F_LineExtra.txtRef10.create(textbox,"",True,3090,300,0,3800,2225,True,0,Arial,8,-2147483643,1)
+gui.F_LineExtra.txtRef10.parent("frame5")
+gui.F_LineExtra.txtRef10.maxLength(50)
+gui.F_LineExtra.lbl19.create(label,"Reference 10",True,1935,255,1,3800,2000,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl19.parent("frame5")
+gui.F_LineExtra.lbl20.create(label,"Reference 9",True,1935,255,1,3800,1500,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl20.parent("frame5")
+gui.F_LineExtra.lbl21.create(label,"Reference 7",True,1935,255,1,3800,545,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl21.parent("frame5")
+gui.F_LineExtra.lbl22.create(label,"Reference 6",True,1935,255,1,3800,45,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl22.parent("frame5")
+gui.F_LineExtra.lbl23.create(label,"Reference 8",True,1935,255,1,3800,1000,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl23.parent("frame5")
+gui.F_LineExtra.lbl24.create(label,"Reference 5",True,1935,255,1,0,2045,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl24.parent("frame5")
+gui.F_LineExtra.lbl25.create(label,"Reference 4",True,1935,255,1,10,1515,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl25.parent("frame5")
+gui.F_LineExtra.lbl26.create(label,"Reference 3",True,1935,255,1,35,1025,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl26.parent("frame5")
+gui.F_LineExtra.lbl27.create(label,"Reference 2",True,1935,255,1,35,530,True,0,Arial,8,-2147483633,0)
+gui.F_LineExtra.lbl27.parent("frame5")
+gui.F_LineExtra.txtHeader.create(textbox,"",False,360,300,0,7045,0,True,0,Arial,8,255,1)
+gui.F_LineExtra.txtU1.tabstop(True)
+gui.F_LineExtra.txtU1.tabindex(1)
+gui.F_LineExtra.txtU2.tabstop(True)
+gui.F_LineExtra.txtU2.tabindex(2)
+gui.F_LineExtra.txtU3.tabstop(True)
+gui.F_LineExtra.txtU3.tabindex(3)
+gui.F_LineExtra.txtU4.tabstop(True)
+gui.F_LineExtra.txtU4.tabindex(4)
+gui.F_LineExtra.txtU5.tabstop(True)
+gui.F_LineExtra.txtU5.tabindex(5)
+gui.F_LineExtra.txtNotes.tabstop(True)
+gui.F_LineExtra.txtNotes.tabindex(8)
+gui.F_LineExtra.txtMeta1.tabstop(True)
+gui.F_LineExtra.txtMeta1.tabindex(13)
+gui.F_LineExtra.txtMeta2.tabstop(True)
+gui.F_LineExtra.txtMeta2.tabindex(14)
+gui.F_LineExtra.txtMeta3.tabstop(True)
+gui.F_LineExtra.txtMeta3.tabindex(15)
+gui.F_LineExtra.txtMeta4.tabstop(True)
+gui.F_LineExtra.txtMeta4.tabindex(16)
+gui.F_LineExtra.txtMeta5.tabstop(True)
+gui.F_LineExtra.txtMeta5.tabindex(17)
+gui.F_LineExtra.txtMeta6.tabstop(True)
+gui.F_LineExtra.txtMeta6.tabindex(18)
+gui.F_LineExtra.txtMeta7.tabstop(True)
+gui.F_LineExtra.txtMeta7.tabindex(19)
+gui.F_LineExtra.txtMeta8.tabstop(True)
+gui.F_LineExtra.txtMeta8.tabindex(20)
+gui.F_LineExtra.txtMeta9.tabstop(True)
+gui.F_LineExtra.txtMeta9.tabindex(21)
+gui.F_LineExtra.txtMeta10.tabstop(True)
+gui.F_LineExtra.txtMeta10.tabindex(22)
+gui.F_LineExtra.txtRef1.tabstop(True)
+gui.F_LineExtra.txtRef1.tabindex(24)
+gui.F_LineExtra.txtRef2.tabstop(True)
+gui.F_LineExtra.txtRef2.tabindex(25)
+gui.F_LineExtra.txtRef3.tabstop(True)
+gui.F_LineExtra.txtRef3.tabindex(26)
+gui.F_LineExtra.txtRef4.tabstop(True)
+gui.F_LineExtra.txtRef4.tabindex(27)
+gui.F_LineExtra.txtRef5.tabstop(True)
+gui.F_LineExtra.txtRef5.tabindex(28)
+gui.F_LineExtra.txtRef6.tabstop(True)
+gui.F_LineExtra.txtRef6.tabindex(29)
+gui.F_LineExtra.txtRef7.tabstop(True)
+gui.F_LineExtra.txtRef7.tabindex(30)
+gui.F_LineExtra.txtRef8.tabstop(True)
+gui.F_LineExtra.txtRef8.tabindex(31)
+gui.F_LineExtra.txtRef9.tabstop(True)
+gui.F_LineExtra.txtRef9.tabindex(32)
+gui.F_LineExtra.txtRef10.tabstop(True)
+gui.F_LineExtra.txtRef10.tabindex(33)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.Global.bBusy.Declare(Boolean,True)
+Program.Sub.Definition.DefaultArgs("ReturnRow","ID")
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+V.Local.iColor.Declare(Long)
+V.Local.iC.Declare(Long)
+
+
+
+Gui.F_Main.fgLines.SetProperty("allowcollapse",1)
+
+Gui.F_Main.fgLines.Cols(13)
+Gui.F_Main.fgLines.Rows(2)
+
+
+Gui.F_Main.fgLines.BuildStyle(2,4,"format","alignment",2)
+Gui.F_Main.fgLines.BuildStyle(2,5,"format","alignment",4)
+Gui.F_Main.fgLines.BuildStyle(2,6,"format","alignment",4)
+Gui.F_Main.fgLines.BuildStyle(2,7,"format","alignment",4)
+Gui.F_Main.fgLines.BuildStyle(2,8,"format","alignment",4)
+Gui.F_Main.fgLines.BuildStyle(2,9,"format","alignment",4)
+Gui.F_Main.fgLines.BuildStyle(2,10,"format","alignment",4)
+Gui.F_Main.fgLines.BuildStyle(2,11,"format","alignment",4)
+
+Gui.F_Main.fgLines.ApplyStyle(0,2)
+
+Gui.F_Main.fgLines.TextMatrix(0,0,"")
+Gui.F_Main.fgLines.TextMatrix(1,0,"LINE ID")
+Gui.F_Main.fgLines.TextMatrix(2,0,"WF ID")
+Gui.F_Main.fgLines.TextMatrix(3,0,"Line")
+Gui.F_Main.fgLines.TextMatrix(4,0,"Description")
+Gui.F_Main.fgLines.BuildStyle(1,4,"format","alignment",2)
+Gui.F_Main.fgLines.TextMatrix(5,0,"Assigned")
+Gui.F_Main.fgLines.BuildStyle(1,5,"format","alignment",4)
+Gui.F_Main.fgLines.TextMatrix(6,0,"Type")
+Gui.F_Main.fgLines.BuildStyle(1,6,"format","alignment",4)
+Gui.F_Main.fgLines.TextMatrix(7,0,"Start Date")
+Gui.F_Main.fgLines.BuildStyle(1,7,"format","alignment",2)
+Gui.F_Main.fgLines.TextMatrix(8,0,"Due Date")
+Gui.F_Main.fgLines.BuildStyle(1,8,"format","alignment",2)
+Gui.F_Main.fgLines.TextMatrix(9,0,"Sign Off")
+Gui.F_Main.fgLines.BuildStyle(1,9,"format","alignment",4)
+Gui.F_Main.fgLines.TextMatrix(10,0,"Type")
+Gui.F_Main.fgLines.BuildStyle(1,10,"format","alignment",4)
+Gui.F_Main.fgLines.TextMatrix(11,0,"% Completed")
+Gui.F_Main.fgLines.BuildStyle(1,11,"format","alignment",4)
+
+Gui.F_Main.fgLines.ColWidth(0,600)
+Gui.F_Main.fgLines.Colwidth(1,0)
+Gui.F_Main.fgLines.ColWidth(2,600)
+Gui.F_Main.fgLines.ColWidth(3,600)
+Gui.F_Main.fgLines.ColWidth(4,5200)
+Gui.F_Main.fgLines.ColWidth(11,1200)
+Gui.F_Main.fgLines.ColWidth(12,500)
+Gui.F_Main.fgLines.BuildStyle(1,0,"type","locked","true")
+Gui.F_Main.fgLines.BuildStyle(1,1,"type","locked","true")
+Gui.F_Main.fgLines.BuildStyle(1,2,"type","locked","true")
+Gui.F_Main.fgLines.BuildStyle(1,3,"type","locked","true")
+Gui.F_Main.fgLines.BuildStyle(1,4,"type","locked","true")
+Gui.F_Main.fgLines.BuildStyle(1,5,"type","locked","true")
+Gui.F_Main.fgLines.BuildStyle(1,6,"type","locked","true")
+Gui.F_Main.fgLines.BuildStyle(1,7,"type","locked","true")
+Gui.F_Main.fgLines.BuildStyle(1,8,"type","locked","true")
+Gui.F_Main.fgLines.BuildStyle(1,9,"type","locked","true")
+Gui.F_Main.fgLines.BuildStyle(1,10,"type","locked","true")
+Gui.F_Main.fgLines.BuildStyle(1,11,"type","locked","true")
+Gui.F_Main.fgLines.BuildStyle(1,11,"format","mask","0.00")
+Gui.F_Main.fgLines.BuildStyle(1,12,"Type","command","Info")
+Gui.F_Main.fgLines.BuildStyle(1,12,"format","alignment",4)
+Gui.F_Main.txtCompletionDate.Mask("MM/DD/YYYY")
+Gui.F_Main.txtDueDate.Mask("MM/DD/YYYY")
+
+F.Intrinsic.UI.RGB(220,220,220,V.Local.iColor)
+F.Intrinsic.Control.For(V.Local.iC,1,11,1)
+	Gui.F_Main.fgLines.BuildStyle(2,V.Local.ic,"color","fore",V.Color.Blue)
+F.Intrinsic.Control.Next(V.Local.iC)
+	'Gui.F_Main.fgLines.BuildStyle(2,2,"color","back",V.Local.iColor)
+'Gui.F_Main.fgLines.BuildStyle(2,3,"color","back",V.Local.iColor)
+'Gui.F_Main.fgLines.BuildStyle(2,4,"color","back",V.Local.iColor)
+'Gui.F_Main.fgLines.BuildStyle(2,5,"color","back",V.Local.iColor)
+'Gui.F_Main.fgLines.BuildStyle(2,6,"color","back",V.Local.iColor)
+'Gui.F_Main.fgLines.BuildStyle(2,7,"color","back",V.Local.iColor)
+'Gui.F_Main.fgLines.BuildStyle(2,8,"color","back",V.Local.iColor)
+'Gui.F_Main.fgLines.BuildStyle(2,9,"color","back",V.Local.iColor)
+
+
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+Gui.F_Main.fgLines.FixedRows(1)
+
+Gui.F_Main..Show
+
+Program.Sub.Main.End
+
+program.sub.fglines_commandclick.start
+
+V.Local.shold.Declare(String)
+V.Local.iID.Declare(Long)
+V.Local.sMeta.Declare(String)
+V.Local.iC.Declare(Long)
+V.Local.iX.Declare(Long)
+V.Local.sret.Declare(String)
+V.Local.squery.Declare(String)
+V.Local.sWF.Declare(String)
+V.Local.sLine.Declare(String)
+
+F.Intrinsic.Control.CallSub(Clear_extra)
+
+'Load User fields from grid
+F.Intrinsic.UI.InvokeWaitDialog("Loading Additional Data","Loading Line Data")
+Gui.F_LineExtra.txtActiveRow.Text(V.Args.key)
+
+Gui.F_Main.fgLines.GetTextMatrix(2,V.Args.key,V.Local.sWF)
+Gui.F_Main.fgLines.GetTextMatrix(3,V.Args.key,V.Local.sLine)
+F.Global.WorkFlow.GetLineID(V.Local.sWF,V.Local.sLine,V.Local.iID)
+
+F.Intrinsic.String.Concat("SELECT USER_1, USER_2, USER_3, USER_4, USER_5 FROM ORDER_HEADER WHERE LINE_ID = ",V.Local.iID,V.Local.squery)
+F.ODBC.Connection!conx.OpenRecordsetRO("rstX",V.Local.squery)
+F.Intrinsic.Control.If(V.ODBC.conx!rstX.EOF,=,False)
+	Gui.F_LineExtra.txtU1.Text(V.odbc.conx!rstX.FieldVal!USER_1)
+	Gui.F_LineExtra.txtU2.Text(V.odbc.conx!rstX.FieldVal!USER_2)
+	Gui.F_LineExtra.txtU3.Text(V.odbc.conx!rstX.FieldVal!USER_3)
+	Gui.F_LineExtra.txtU4.Text(V.odbc.conx!rstX.FieldVal!USER_4)
+	Gui.F_LineExtra.txtU5.Text(V.odbc.conx!rstX.FieldVal!USER_5)
+F.Intrinsic.Control.EndIf
+F.ODBC.Conx!rstX.Close
+F.Intrinsic.UI.ChangeWaitStatus("Loading Dependencies",2,1,5)
+F.Intrinsic.Control.CallSub(Load_depend,"KEY",V.Args.key,"iID",V.Local.iID)
+
+'load dependenciesgui.F_LineExtra.ta
+
+Gui.F_LineExtra.tabx1.tabvisible(0,True)
+Gui.F_LineExtra.tabx1.tabvisible(1,True)
+Gui.F_LineExtra.tabx1.tabvisible(2,True)
+Gui.F_LineExtra.tabx1.tabvisible(3,True)
+
+Gui.F_LineExtra.tabx1.SetTab(0)
+'load notes
+
+F.Intrinsic.Control.CallSub(Load_doc_depend,"KEY",V.Args.key,"iID",V.Local.iID)
+F.Intrinsic.UI.ChangeWaitStatus("Loading Notes",3,1,5)
+F.global.workflow.READNOTE(V.Local.iID,V.Local.sHold)
+Gui.F_LineExtra.txtNotes.Text(V.Local.sHold)
+'load meta data
+F.Intrinsic.UI.ChangeWaitStatus("Loading Meta Data",4,1,5)
+F.global.workflow.READMETADATA(V.Local.iID,0,-1,V.Local.sHold)
+F.Intrinsic.String.Split(V.Local.sHold,"*!*",V.Local.smeta)
+
+F.Intrinsic.Control.for(V.Local.iC,V.Local.sMeta.LBound,V.Local.sMeta.UBound,1)
+	F.Intrinsic.Math.Add(V.Local.iC,1,V.Local.iX)
+	Gui.F_LineExtra.txtMeta[v.local.iX].text(V.Local.sMeta(v.Local.iC))
+F.Intrinsic.Control.Next(V.Local.iC)
+F.Intrinsic.UI.ChangeWaitStatus("Loading Reference",5,1,5)
+F.global.workflow.READREFERENCELINEDATA(V.Local.sWF,V.Local.sLine,-1,V.Local.sHold)
+F.Intrinsic.String.Split(V.Local.sHold,"*!*",V.Local.smeta)
+F.Intrinsic.Control.for(V.Local.iC,V.Local.sMeta.LBound,V.Local.sMeta.UBound,1)
+	F.Intrinsic.Math.Add(V.Local.iC,1,V.Local.iX)
+	Gui.F_LineExtra.txtRef[v.local.iX].text(V.Local.sMeta(v.Local.iC))
+F.Intrinsic.Control.Next(V.Local.iC)
+Gui.F_LineExtra.txtHeader.Text("")
+Gui.F_LineExtra..Show
+F.Intrinsic.UI.CloseWaitDialog
+
+
+
+program.sub.fglines_commandclick.end
+
+program.sub.f_main_unload.start
+F.ODBC.Connection!conx.Close
+
+F.Intrinsic.Control.End
+
+program.sub.f_main_unload.end
+
+Program.Sub.LoadLines.Start
+
+V.Local.sID.Declare(String)
+V.Local.sLines.Declare(String)
+V.Local.iC.Declare(Long)
+V.Local.iRows.Declare(Long)
+V.Local.iRow.Declare(Long)
+V.Local.shold.Declare(String)
+V.Local.iRet.Declare(Long)
+V.Local.sQuery.Declare(String)
+V.Local.iParent.Declare(Long)
+V.Local.iParentRow.Declare(Long)
+V.Local.bComplete.Declare(Boolean)
+
+V.Local.sRet.Declare(String)
+V.Local.iWF.Declare(Long)
+F.Intrinsic.Control.If(V.Global.bBusy,=,True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+V.global.bBusy.Set(True)
+f.Intrinsic.Control.If(V.Screen.F_Main!txtID.Text.trim,=,"")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+Gui.F_Main.fgLines.Rows(1)
+Gui.F_Main.fgLines.Rows(2)
+Gui.F_Main.fgLines.ApplyStyle(1,1)
+
+V.Local.iWF.Set(V.Screen.F_Main!txtID.Text)
+
+F.Global.workflow.READEXPLODED(V.Local.iWF,V.Local.sLines)
+
+V.Local.iRows.Set(2)
+V.Local.iRow.Set(1)
+Gui.F_Main.fgLines.ApplyStyle(V.Local.iRow,1)
+F.Intrinsic.String.Split(V.Local.sLines,"*!*",V.Local.sLines)
+F.Intrinsic.String.Split(V.Local.sID,"*!*",V.Local.sID)
+Gui.F_Main.fgLines.Visible(false)
+F.Intrinsic.Control.If(V.Local.sLines.UBound,>,0)
+	F.Intrinsic.UI.InvokeWaitDialog("Loading Lines","Work Flow Lines")
+F.Intrinsic.Control.EndIf
+V.Local.iWF.set(V.Screen.F_Main!txtID.Text)
+V.Local.bComplete.Set(True)
+
+F.Intrinsic.Control.for(V.Local.iC,0,V.Local.sLines.uBound,1)
+	F.Intrinsic.Control.If(V.Local.SLINES(V.Local.iC).Trim,<>,"")
+		F.Intrinsic.String.Concat("SELECT WF_ID, LINE FROM ATG_WF_LINES WHERE LINE_ID = ",V.Local.sLines(v.Local.ic),V.Local.squery)
+		F.ODBC.Connection!conx.OpenRecordsetRO("rstX",V.Local.squery)
+		F.Intrinsic.Control.If(V.ODBC.conx!rstX.EOF,=,False)
+			'Getting Invalid Namespace
+			F.Global.WorkFlow.ReadLines(V.odbc.conx!rstX.FieldVal!WF_ID,V.ODBC.conx!rstX.FieldVal!line,V.Local.sret)
+			'also getting the error Invalid Namespace
+			'F.Global.WorkFlow.ReadLines(22,1,v.Local.sRet)
+			'F.Intrinsic.Control.If(V.Local.sLines.UBound,<>,0)
+
+			F.Intrinsic.UI.ChangeWaitStatus("Loading Lines",V.Local.iC,1,V.Local.sLines.UBound)
+			'F.Intrinsic.Control.endif
+			
+
+
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+			
+			F.Intrinsic.Control.If(V.Local.sRet.UBound,>,17)
+				F.Intrinsic.Control.If(V.Local.sRet(10),=,"")
+					V.Local.bComplete.Set(False)
+				F.Intrinsic.Control.endif
+				Gui.F_Main.fgLines.Rows(V.Local.iRows)
+				Gui.F_Main.fgLines.ApplyStyle(V.Local.iRow,1)
+				Gui.F_Main.fgLines.TextMatrix(4,V.Local.iRow,V.Local.sRet(0))
+				Gui.F_Main.fgLines.TextMatrix(3,V.Local.iRow,V.odbc.conx!rstX.FieldVal!LINE)
+				Gui.F_Main.fgLines.TextMatrix(2,V.Local.iRow,V.ODBC.conx!rstX.FieldVal!WF_ID)
+				Gui.F_Main.fgLines.TextMatrix(1,V.Local.iRow,V.Local.sLines(v.Local.ic))
+
+				Gui.F_Main.fgLines.TextMatrix(5,V.Local.iRow,V.Local.sRet(6))
+				F.Intrinsic.Control.If(V.Local.sRet(7),=,True)
+					Gui.F_Main.fgLines.TextMatrix(6,V.Local.iRow,"User")
+				F.Intrinsic.Control.Else
+					Gui.F_Main.fgLines.TextMatrix(6,V.Local.iRow,"Group")
+				F.Intrinsic.Control.endif
+
+				Gui.F_Main.fgLines.TextMatrix(7,V.Local.iRow,V.Local.sRet(18))
+				F.Intrinsic.Control.If(V.Local.sRet(18).IsDate,=,True)
+					F.Intrinsic.String.Format(V.Local.sRet(18),"MM/DD/YYYY",V.Local.sRet(18))
+				F.Intrinsic.Control.EndIf
+				'will be removed after due date issue is fixed.
+				F.Intrinsic.String.Concat("SELECT DUE_DATE FROM ATG_WF_LINES WHERE LINE_ID = ",V.Local.sLines(v.Local.ic),V.Local.squery)
+				F.ODBC.Connection!conx.OpenRecordsetRO("rstDueDate",V.Local.squery)
+				F.Intrinsic.Control.If(V.ODBC.conx!rstDueDate.EOF,=,False)
+					F.Intrinsic.String.Format(V.odbc.conx!rstDueDate.FieldValPervasiveDate!DUE_DATE,"MM/DD/YYYY",V.Local.sRet(18))
+				F.Intrinsic.control.endif
+				F.odbc.conx!rstDueDate.close
+			
+				Gui.F_Main.fgLines.TextMatrix(8,V.Local.iRow,V.Local.sRet(18))
+				Gui.F_Main.fgLines.TextMatrix(9,V.Local.iRow,V.Local.sRet(11))
+				F.Intrinsic.Control.If(V.Local.sRet(12),=,True)
+					Gui.F_Main.fgLines.TextMatrix(10,V.Local.iRow,"User")
+				F.Intrinsic.Control.Else
+					Gui.F_Main.fgLines.TextMatrix(10,V.Local.iRow,"Group")
+				F.Intrinsic.Control.endif
+			
+				Gui.F_Main.fgLines.TextMatrix(11,V.Local.iRow,V.Local.sRet(10))
+				
+
+				F.Intrinsic.String.Concat("SELECT ASSOC_ID FROM ATG_WF_DEPENDENCY WHERE DEPENDENCY = ",V.ODBC.conx!rstX.FieldVal!WF_ID," AND ASSOC_TYPE = 1 AND DEP_TYPE = 0",V.Local.squery)
+				F.ODBC.Connection!conx.OpenRecordsetRO("rstDep",V.Local.sQuery)
+				F.Intrinsic.Control.If(V.ODBC.conx!rstDep.EOF,=,False)
+					F.Intrinsic.Control.CallSub(Returnrow,"ID",V.ODBC.conx!rstDep.FieldVal!ASSOC_ID)
+					F.Intrinsic.Control.If(V.args.Row,<>,-1)
+
+						Gui.F_Main.fgLines.SetParentRow(V.Local.iRow,V.args.row)
+					F.Intrinsic.Control.endif
+				F.Intrinsic.Control.endif
+				F.ODBC.Conx!rstDep.Close
+				
+				F.Intrinsic.String.Concat("SELECT DEPENDENCY FROM ATG_WF_DEPENDENCY WHERE ASSOC_ID = ",V.Local.sLines(v.Local.ic)," AND ASSOC_TYPE = 1",V.Local.squery)
+				F.ODBC.Connection!conx.OpenRecordsetRO("rstDep",V.Local.sQuery)
+				F.Intrinsic.Control.If(V.ODBC.conx!rstDep.EOF,=,False)
+					Gui.F_Main.fgLines.ApplyStyle(V.Local.iRow,2)
+				F.Intrinsic.Control.endif
+				Gui.F_Main.fgLines.ApplyStyle(V.Local.iRow,1)
+				F.ODBC.Conx!rstDep.Close
+				F.Intrinsic.Math.Add(V.Local.iRows,1,V.Local.iRows)
+				F.Intrinsic.Math.Add(V.Local.iRow,1,V.Local.iRow)
+			F.Intrinsic.Control.endif
+		F.Intrinsic.Control.endif
+		F.ODBC.conx!rstX.close
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Next(V.Local.iC)
+F.Intrinsic.Control.If(V.Local.sLines.UBound,>,0)
+	F.Intrinsic.UI.CloseWaitDialog
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Concat("SELECT MAX( DUE_DATE) AS DUE_DATE FROM ATG_WF_LINES WHERE WF_ID = ",V.Screen.F_Main!txtID.text,V.Local.squery)
+F.ODBC.Connection!conx.OpenRecordsetRO("rstDueDate",V.Local.squery)
+F.Intrinsic.Control.If(V.ODBC.conx!rstDueDate.EOF,=,False)
+	F.Intrinsic.String.Format(V.odbc.conx!rstDueDate.FieldValPervasiveDate!DUE_DATE,"MM/DD/YYYY",V.Local.sRet)
+	Gui.F_Main.txtDueDate.Text(V.Local.sRet)
+F.Intrinsic.control.endif
+F.odbc.conx!rstDueDate.close
+
+F.Intrinsic.Control.If(V.Local.bComplete,=,True)
+	
+	F.Intrinsic.String.Concat("SELECT MAX( COMPLETION_DATE) AS COMPLETION_DATE FROM ATG_WF_LINES WHERE WF_ID = ",V.Screen.F_Main!txtID.text,V.Local.squery)
+	F.ODBC.Connection!conx.OpenRecordsetRO("rstDueDate",V.Local.squery)
+	F.Intrinsic.Control.If(V.ODBC.conx!rstDueDate.EOF,=,False)
+		F.Intrinsic.String.Format(V.odbc.conx!rstDueDate.FieldValPervasiveDate!COMPLETION_DATE,"MM/DD/YYYY",V.Local.sRet)
+		Gui.F_Main.txtCompletionDate.Text(V.Local.sRet)
+	F.Intrinsic.control.endif
+	F.odbc.conx!rstDueDate.close
+F.Intrinsic.Control.EndIf
+
+Gui.F_Main.fgLines.Visible(True)
+Gui.F_Main.fgLines.FixedRows(1)
+'V.Global.bBusy.Set(False)
+
+
+Program.Sub.LoadLines.End
+
+program.sub.cmdbrowse_click.start
+V.Local.sCol.Declare(String)
+V.Local.sWidth.Declare(String)
+
+V.Local.sret.Declare(String)
+V.Local.squery.Declare(String)
+V.Local.shold.Declare(String)
+
+F.Intrinsic.String.Split("1000*!*3500*!*1000*!*2500*!*0*!*0","*!*",V.Local.swidth)
+F.Intrinsic.String.Split("ID*!*Title*!*Type*!*Creation Date*!*Status*!*PARENT","*!*",V.Local.sCol)
+
+V.Local.squery.Set("SELECT DISTINCT WF_ID,TITLE, PRIORITY, CREATION_DATE, STATUS, WF_PARENT FROM ATG_WF_HEADER ORDER BY WF_ID")
+
+F.intrinsic.UI.Browser("Select Work Flow","conx",V.Local.squery,V.Local.sCol,V.Local.sWidth,V.Local.sret)
+F.Intrinsic.Control.If(V.Local.sret,<>,"***CANCEL***")
+	F.Intrinsic.string.Split(V.Local.sret,"*!*",V.Local.sRet)
+	Gui.F_Main.txtID.Text(V.Local.sret(0))
+	Gui.F_Main.txtTitle.Text(V.Local.sret(1))
+	Gui.F_Main.txtType.Text(V.Local.sret(2))
+	Gui.F_Main.txtStatus.Text(V.Local.sret(4))
+	Gui.F_Main.txtPID.Text(V.Local.sret(5))
+	f.Global.WorkFlow.readcompletion(V.Local.sret(0),V.Local.shold)
+	F.Intrinsic.String.Format(V.Local.shold,"#.00",V.Local.shold)
+	Gui.F_Main.txtPercComplete.Text(V.Local.shold)
+	F.Intrinsic.String.Concat("SELECT DUE_DATE, START_DATE, COMPLETION_DATE FROM ATG_WF_HEADER WHERE WF_ID = ",V.Local.sret(0),V.Local.squery)
+	F.ODBC.Connection!conx.OpenRecordsetRO("rstX",V.Local.squery)
+	F.Intrinsic.Control.If(V.odbc.conx!rstX.EOF,=,False)
+		F.Intrinsic.Control.If(V.ODBC.conx!rstX.FieldValIsNull!DUE_DATE,=,False)
+			F.Intrinsic.String.Format(V.ODBC.conx!rstX.FieldVal!DUE_Date,"MM/DD/YYYY",V.Local.shold)
+			Gui.F_Main.txtDueDate.Text(V.Local.shold)
+		F.Intrinsic.Control.endif
+		F.Intrinsic.String.Format(V.ODBC.conx!rstX.FieldVal!Start_Date,"MM/DD/YYYY",V.Local.shold)
+		Gui.F_Main.txtStart.Text(V.local.shold)
+		F.Intrinsic.Control.If(V.ODBC.conx!rstX.FieldValIsNull!COMPLETION_DATE,=,False)
+			F.Intrinsic.String.Format(V.ODBC.conx!rstX.FieldVal!COMPLETION_Date,"MM/DD/YYYY",V.Local.shold)
+			Gui.F_Main.txtCompletionDate.Text(V.Local.shold)
+		F.Intrinsic.Control.endif
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Conx!rstX.close
+
+	V.global.bBusy.Set(False)
+	F.Intrinsic.Control.CallSub(Loadlines)
+F.Intrinsic.Control.endif
+
+
+
+program.sub.cmdbrowse_click.end
+
+Program.Sub.ReturnRow.Start
+V.Local.iC.Declare(Long)
+V.Local.iRows.Declare(Long)
+V.Local.sText.Declare(String)
+F.Intrinsic.Variable.AddRV("Row",-1)
+
+F.Intrinsic.math.Sub(V.Screen.F_Main!fgLines.Rows,1,V.Local.iRows)
+F.Intrinsic.control.For(V.Local.iC,1,V.local.iRows,1)
+	Gui.F_Main.fgLines.GetTextMatrix(1,V.Local.iC,V.Local.sText)
+	F.Intrinsic.Control.If(V.Local.sText,=,V.Args.ID)
+		F.Intrinsic.Variable.AddRV("Row",V.Local.iC)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.endif
+F.Intrinsic.Control.Next(V.Local.iC)
+
+Program.Sub.ReturnRow.End
+
+Program.Sub.load_doc_Depend.Start
+V.Local.shold.Declare(String)
+V.Local.iHold.Declare(Long)
+V.Local.iID.Declare(Long)
+V.Local.iC.Declare(Long)
+V.Local.iRow.Declare(Long)
+V.Local.irows.declare(Long)
+V.Local.sret.Declare(String)
+
+V.Local.sfile.Declare(String)
+V.Local.sDesc.Declare(String)
+V.Local.sGroup.Declare(String)
+V.Local.bRet.Declare(Boolean)
+
+
+Gui.F_Main.fgLines.GetTextMatrix(0,V.Screen.F_LineExtra!txtActiveRow.text,V.Local.iid)
+	'load document associated
+F.Global.workflow.GETDOCUMENTREFERENCES(V.local.iid,1,V.Local.iHold,V.Local.sHold)
+
+Gui.F_LineExtra.fgDocuments.Cols(4)
+Gui.F_LineExtra.fgDocuments.Rows(1)
+Gui.F_LineExtra.fgDocuments.Rows(2)
+Gui.F_LineExtra.fgDocuments.TextMatrix(0,0,"ID")
+Gui.F_LineExtra.fgDocuments.TextMatrix(1,0,"File")
+Gui.F_LineExtra.fgDocuments.TextMatrix(2,0,"Template")
+Gui.F_LineExtra.fgDocuments.ColWidth(0,700)
+Gui.F_LineExtra.fgDocuments.ColWidth(1,4500)
+Gui.F_LineExtra.fgDocuments.ColWidth(2,1000)
+Gui.F_LineExtra.fgDocuments.ColWidth(3,600)
+Gui.F_LineExtra.fgDocuments.FixedRows(1)
+V.Local.iRow.Set(0)
+V.Local.irows.Set(1)
+F.Intrinsic.string.Split(V.Local.shold,"*!*",V.Local.shold)
+
+F.Intrinsic.Control.For(V.Local.iC,0,V.Local.shold.UBound,1)
+	F.Intrinsic.Control.If(V.Local.shold(v.Local.iC).trim,<>,"")
+		F.Intrinsic.Math.Add(V.Local.irows,1,V.Local.irows)
+		F.Intrinsic.Math.Add(V.Local.iRow,1,V.Local.iRow)
+		Gui.F_LineExtra.fgDocuments.Rows(V.Local.irows)
+		Gui.F_LineExtra.fgDocuments.ApplyStyle(V.Local.iRow,1)
+		Gui.F_LineExtra.fgDocuments.TextMatrix(0,V.Local.irow,V.Local.shold(v.Local.iC))
+		f.Global.WorkFlow.Readdocument(V.Local.shold(v.Local.iC),V.Local.sRet)
+		F.Intrinsic.String.Split(V.Local.sret,"*!*",V.Local.sret)
+		F.Intrinsic.control.If(V.Local.sret.UBound,=,1)
+			Gui.F_LineExtra.fgDocuments.TextMatrix(1,V.Local.irow,V.Local.sret(1))
+			Gui.F_LineExtra.fgDocuments.TextMatrix(2,V.Local.irow,V.Local.sret(0))
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Next(V.Local.iC)
+Gui.F_LineExtra.fgDocuments.FixedRows(1)
+
+
+Program.Sub.load_doc_Depend.End
+
+Program.Sub.load_depend.Start
+
+
+V.Local.sHold.Declare(String)
+V.Local.iID.Declare(Long)
+V.Local.iC.Declare(Long)
+V.Local.iX.Declare(Long)
+V.Local.sret.Declare(String)
+V.Local.iRows.Declare(Long)
+V.Local.iRow.Declare(Long)
+
+Gui.F_Main.fgLines.GetTextMatrix(1,V.args.key,V.Local.sHold)
+'load document associated
+
+V.Local.iRow.Set(0)
+V.Local.irows.Set(1)
+Gui.F_LineExtra.fgDependecies.Rows(1)
+Gui.F_LineExtra.fgDependecies.Rows(2)
+f.Global.WorkFlow.ReadLineDependency(V.Args.iID,-1,V.Local.sRet)
+
+F.Intrinsic.String.Split(V.Local.sret,V.Ambient.NewLine,V.Local.sret)
+F.Intrinsic.Control.For(V.Local.iC,V.Local.sret.LBound,V.Local.sret.UBound,1)
+	F.Intrinsic.String.Split(V.Local.sret(v.Local.iC),"*!*",V.Local.sHold)
+	F.Intrinsic.Control.If(V.Local.sHold.UBound,>=,4)
+		F.Intrinsic.Math.Add(V.Local.irows,1,V.Local.irows)
+		F.Intrinsic.Math.Add(V.Local.iRow,1,V.Local.iRow)
+		Gui.F_LineExtra.fgDependecies.Rows(V.Local.irows)
+		Gui.F_LineExtra.fgDependecies.ApplyStyle(V.Local.iRow,1)
+		Gui.F_LineExtra.fgDependecies.TextMatrix(0,V.Local.irow,V.Local.shold(0))
+		Gui.F_LineExtra.fgDependecies.TextMatrix(1,V.Local.irow,V.Local.shold(1))
+		Gui.F_LineExtra.fgDependecies.TextMatrix(2,V.Local.irow,V.Local.shold(2))
+		Gui.F_LineExtra.fgDependecies.TextMatrix(3,V.Local.irow,V.Local.shold(3))
+		Gui.F_LineExtra.fgDependecies.TextMatrix(4,V.Local.irow,V.Local.shold(4))
+		Gui.F_LineExtra.fgDependecies.ApplyStyle(V.Local.iRow,1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iC)
+Gui.F_LineExtra.fgDependecies.FixedRows(1)
+
+
+
+Program.Sub.load_depend.End
+
+Program.Sub.clear_extra.Start
+
+
+V.Local.iC.Declare(Long)
+
+Gui.F_LineExtra.txtActiveRow.Text("")
+
+Gui.F_LineExtra.txtMeta1.Text("")
+Gui.F_LineExtra.txtMeta2.Text("")
+Gui.F_LineExtra.txtMeta3.Text("")
+Gui.F_LineExtra.txtMeta4.Text("")
+Gui.F_LineExtra.txtMeta5.Text("")
+Gui.F_LineExtra.txtMeta6.Text("")
+Gui.F_LineExtra.txtMeta7.Text("")
+Gui.F_LineExtra.txtMeta8.Text("")
+Gui.F_LineExtra.txtMeta9.Text("")
+Gui.F_LineExtra.txtMeta10.Text("")
+
+Gui.F_LineExtra.txtU1.Text("")
+Gui.F_LineExtra.txtU2.Text("")
+Gui.F_LineExtra.txtU3.Text("")
+Gui.F_LineExtra.txtU4.Text("")
+Gui.F_LineExtra.txtU5.Text("")
+
+Gui.F_LineExtra.txtNotes.Text("")
+
+Gui.F_LineExtra.fgDependecies.Rows(1)
+Gui.F_LineExtra.fgDependecies.Rows(2)
+Gui.F_LineExtra.fgDependecies.Fixedrows(1)
+
+Gui.F_LineExtra.fgDocuments.Rows(1)
+Gui.F_LineExtra.fgDocuments.Rows(2)
+Gui.F_LineExtra.fgDocuments.FixedRows(1)
+
+
+
+Program.Sub.clear_extra.End
+
+Program.Sub.f_lineextra_unload.Start
+
+Gui.F_LineExtra..Visible(False)
+
+Program.Sub.f_lineextra_unload.End
+
+program.sub.cmdmeta_click.start
+V.Local.sHold.Declare(String)
+V.Local.iID.Declare(Long)
+V.Local.sMeta.Declare(String)
+V.Local.iC.Declare(Long)
+V.Local.iX.Declare(Long)
+
+F.Intrinsic.Control.CallSub(Clear_extra)
+'loaddocumentassociat
+'load dependencies
+'load notes
+V.Local.iID.Set(V.Screen.F_Main!txtID.Text)
+
+Gui.F_LineExtra.tabx1.tabvisible(0,False)
+Gui.F_LineExtra.tabx1.tabvisible(1,False)
+Gui.F_LineExtra.tabx1.tabvisible(2,False)
+Gui.F_LineExtra.tabx1.tabvisible(3,False)
+'load meta data
+F.global.workflow.READMETADATA(V.Local.iID,1,-1,V.Local.sHold)
+F.Intrinsic.String.Split(V.Local.sHold,"*!*",V.Local.smeta)
+
+F.Intrinsic.Control.for(V.Local.iC,V.Local.sMeta.LBound,V.Local.sMeta.UBound,1)
+	F.Intrinsic.Math.Add(V.Local.iC,1,V.Local.iX)
+	Gui.F_LineExtra.txtMeta[v.local.iX].text(V.Local.sMeta(v.Local.iC))
+F.Intrinsic.Control.Next(V.Local.iC)
+F.global.workflow.READREFERENCEDATA(V.Local.iID,-1,V.local.sHold)
+F.Intrinsic.String.Split(V.Local.sHold,"*!*",V.Local.smeta)
+
+F.Intrinsic.Control.for(V.Local.iC,V.Local.sMeta.LBound,V.Local.sMeta.UBound,1)
+	F.Intrinsic.Math.Add(V.Local.iC,1,V.Local.iX)
+	Gui.F_LineExtra.txtref[v.local.iX].text(V.Local.sMeta(v.Local.iC))
+F.Intrinsic.Control.Next(V.Local.iC)
+
+Gui.F_LineExtra.txtHeader.Text(V.Screen.F_Main!txtID.text)
+Gui.F_LineExtra.tabx1.SetTab(4)
+Gui.F_LineExtra..Show
+
+program.sub.cmdmeta_click.end
+
+program.sub.cmdlink_click.start
+V.Local.shold.Declare(String)
+V.Local.sWF.Declare(String)
+V.Local.sScript.Declare(String)
+
+V.Local.sLine.Declare(String)
+F.Intrinsic.Control.If(V.Screen.F_Main!txtID.Text,<>,"")
+
+	F.Global.General.ResetPassedDataElements
+
+	F.Global.General.SetPassedDataElement("DATA-LINK-TYPE","90")
+	F.Global.General.SetPassedDataElement("DATA-LINK-KEY",V.Screen.F_Main!txtID.Text)
+
+	F.Global.General.SetPassedDataElement("DATA-LINK-DESC",V.Screen.F_Main!txtTitle.Text)
+	F.ODBC.Connection!conx.OpenRecordsetRO("rstHook","SELECT SYNC_FLAG, SCRIPT_PATH, SCRIPT_NAME FROM HOOK_ASSOCIATION WHERE ACTIVE_FLAG = 'A' AND ID = '000016120'")
+	F.Intrinsic.Control.If(V.ODBC.conx!rstHook.EOF,=,False)
+	
+		F.Intrinsic.Control.If(V.ODBC.conx!rstHook.FieldValTrim!SCRIPT_PATH,=,"#SCRIPT-PATH#")
+			F.Intrinsic.string.Concat(V.caller.PluginsDir,"\GAB\GAS\",V.ODBC.conx!rstHook.FieldValTrim!SCRIPT_NAME,V.Local.sScript)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Right(V.ODBC.conx!rstHook.FieldValTrim!SCRIPT_PATH,1,V.Local.shold)
+			F.Intrinsic.Control.If(V.Local.shold,<>,"\")
+				F.Intrinsic.string.Concat(V.ODBC.conx!rstHook.FieldValTrim!SCRIPT_PATH,"\",V.ODBC.conx!rstHook.FieldValTrim!SCRIPT_NAME,V.Local.sScript)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.string.Concat(V.ODBC.conx!rstHook.FieldValTrim!SCRIPT_PATH,V.ODBC.conx!rstHook.FieldValTrim!SCRIPT_NAME,V.Local.sScript)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.Control.If(V.ODBC.conx!rstHook.FieldValTrim!SYNC_FLAG,=,"S")
+			F.Global.General.CallsyncGAS(V.Local.sScript)
+		F.Intrinsic.Control.Else
+			F.Global.General.CallAsyncGAS(V.Local.sScript)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.UI.Msgbox("Hook 000016120 not active. Unable to launch links.")
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rstHook.Close
+F.Intrinsic.Control.endif
+
+
+
+program.sub.cmdlink_click.end
+
+program.sub.cmddelete_click.start
+V.Local.iRet.Declare(Long)
+
+f.Intrinsic.control.If(V.Screen.F_Main!txtID.Text.trim,<>,"")
+	F.Intrinsic.UI.Msgbox("Are you sure you want to delete the selected work flow?","Work Flow Delete",4,V.Local.iRet)
+	F.Intrinsic.Control.If(V.Local.iRet,=,6)
+		F.Global.WorkFlow.Delete(V.Screen.F_Main!txtID.Text)
+		Gui.F_Main.fgLines.Rows(1)
+		Gui.F_Main.fgLines.Rows(2)
+		Gui.F_Main.fgLines.ApplyStyle(1,1)
+		Gui.F_Main.fglines.FixedRows(1)
+		Gui.F_Main.txtid.Text("")
+		Gui.F_Main.txtCompletionDate.Text("")
+		Gui.F_Main.txtTitle.Text("")
+		Gui.F_Main.txtDueDate.Text("")
+		Gui.F_Main.txtPID.Text("")
+		Gui.F_Main.txtType.Text("")
+		gui.F_Main.txtStatus.Text("")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+program.sub.cmddelete_click.end
+
+Program.Sub.Level.Start
+V.Local.sSQL.Declare(String)
+V.Local.sProj.Declare(String)
+
+'Job, Suffix compared to Parent_WO, Parent_Suffix_Parent, Project
+F.Intrinsic.String.Concat("Select Job,Suffix,Parent_WO,Parent_Suffix_Parent,Level from ZW_Projects where Projects='",V.Local.sProj,"' order by Job,Suffix,Parent_WO,Parent_Suffix_Parent",V.Local.sSQL)
+
+
+F.ODBC.Connection!conx.OpenLocalRecordsetRW("rstProj",V.Local.sSQL)
+F.Intrinsic.Control.DoUntil(V.ODBC.conx!rstProj.EOF,=,True)
+	
+	F.ODBC.conx!rstProj.MoveNext
+F.Intrinsic.Control.Loop
+F.ODBC.conx!rstProj.Close
+
+Program.Sub.Level.End
+
+
